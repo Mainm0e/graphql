@@ -1,17 +1,22 @@
+import {studentInfoData} from "./payload.js";
 export default class Student {
     constructor(){
         this.token = localStorage.getItem("jwt")
         document.title = "Student"
-    }
-    render(){
-        return `
-        <p>Student</p>
-        <p>Token: ${this.token}</p>
-        `
+       
     }
 
+   async render(){
+        this.student = await this.getData(studentInfoData)
+        this.id = JSON.stringify(this.student.id)
+        this.name = JSON.stringify(this.student.login)
+        document.getElementById("main_page").innerHTML = this.makeBox()
+    }
+     makeBox(){
+        return`
+        <p>${this.id},${this.name}</p>`
+    }
     getData = async (payload) => {
-        console.log("payload",payload)
         try {
             const graphqlResponse = await axios.post(
                 'https://01.gritlab.ax/api/graphql-engine/v1/graphql',
@@ -26,9 +31,9 @@ export default class Student {
                 }
             );
             console.log("graphqlResponse",graphqlResponse.data.data)
-            const responseData = await graphqlResponse.data.data.user[0]
-
-            console.log(this.readData(responseData))
+            const responseData = await graphqlResponse.data.data.user
+                console.log(JSON.stringify(responseData[0]))
+            return responseData[0]
             // Now that you have the JWT, you can use it in subsequent GraphQL requests
             // You can include the JWT in the Authorization header with Bearer authentication
         }catch (error) {
@@ -36,11 +41,5 @@ export default class Student {
             // Display appropriate error message if credentials are invalid
             // You can handle the error here and display it on your login page
         }
-    }
-    readData(data) {
-        console.log("data", JSON.stringify(data));
-        return `
-        <p>Student</p>
-        <p>data: ${JSON.stringify(data)}</p>`;
     }
 }

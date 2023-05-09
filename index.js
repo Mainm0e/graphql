@@ -9,19 +9,12 @@ const path = currentURL.split("/").pop();
 if (path !== "") {
     window.location.href = "/";
 }
-document.addEventListener("DOMContentLoaded", () => {   
+document.addEventListener("DOMContentLoaded",  () =>  {   
     // Check for token
     if (localStorage.getItem("jwt")) {
         // If token exists, render student page
         let student = new Student()
-        main.innerHTML = student.render()
-        let payload = `
-        query{
-            user {
-              id
-            }
-          }`
-       student.getData(payload)
+         student.render() 
     } else {
         // If token does not exist, render login page
         let login = new Login()
