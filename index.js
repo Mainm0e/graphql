@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded",  () =>  {
     if (localStorage.getItem("jwt")) {
         // If token exists, render student page
         let student = new Student()
-         student.render() 
     } else {
         // If token does not exist, render login page
         let login = new Login()

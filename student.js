@@ -1,18 +1,22 @@
-import {studentInfoData} from "./payload.js";
+import {studentInfoData
+,studentXpChart
+} from "./payload.js";
 export default class Student {
     constructor(){
         this.token = localStorage.getItem("jwt")
         document.title = "Student"
-       
+       this.render()
     }
 
    async render(){
         this.student = await this.getData(studentInfoData)
-        this.id = JSON.stringify(this.student.id)
-        this.name = JSON.stringify(this.student.login)
+        this.id = this.student["user"][0]["id"]
+        this.name = this.student["user"][0]["login"]
+        this.xpChart = await this.getData(studentXpChart(this.id))
         document.getElementById("main_page").innerHTML = this.makeBox()
     }
      makeBox(){
+        console.log(this.xpChart)
         return`
         <p>${this.id},${this.name}</p>`
     }
@@ -30,10 +34,9 @@ export default class Student {
                     }
                 }
             );
-            console.log("graphqlResponse",graphqlResponse.data.data)
-            const responseData = await graphqlResponse.data.data.user
-                console.log(JSON.stringify(responseData[0]))
-            return responseData[0]
+            const responseData = await graphqlResponse.data.data
+                console.log(JSON.stringify(responseData))
+            return responseData
             // Now that you have the JWT, you can use it in subsequent GraphQL requests
             // You can include the JWT in the Authorization header with Bearer authentication
         }catch (error) {
