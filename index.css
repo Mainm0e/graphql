@@ -57,3 +57,8 @@
 .form_submit input:hover{
     background-color: #008ec7;
 }
+.xp_chart{
+    width: 500px;
+    height: 250px;
+    position: absolute;
+}
