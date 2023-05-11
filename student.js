@@ -8,6 +8,7 @@ import {convertCreatedAtToNewFormat,convertDataToSkillData} from "./tool/convert
 import {getData} from "./tool/getApi.js"
 import {skillChart} from "./tool/skills_chart.js"
 import {expChart} from "./tool/exp_chart.js"
+import {Logout} from "./tool/logout.js"
 export default class Student {
     constructor(){
         this.token = localStorage.getItem("jwt")
@@ -22,8 +23,9 @@ export default class Student {
         )
     }
     main(){
-       expChart(chartData(this.transactionData),120)
-        skillChart( convertDataToSkillData(this.basicskill))
+    expChart(chartData(this.transactionData),120)
+    skillChart( convertDataToSkillData(this.basicskill))
+    Logout()
     }
      makeBox(){
         return`
