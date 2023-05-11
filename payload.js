@@ -17,9 +17,6 @@ export const studentXpChart = (id) => `
       objectId
     }
   }`
-
-
-
 // get all projects under school curriculum
 export const schoolProjects =`
 query {
@@ -47,3 +44,14 @@ query {
         childId
         }
     }`;
+// get api for basic-skill 
+export const studentBasicSkill = (id) => `
+query{
+    transaction(where:{userId:{_eq:${id}},type:{_regex:"skill"}}){
+        path
+    	amount
+    	type
+        objectId	
+    }
+  }
+`
