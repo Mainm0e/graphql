@@ -55,3 +55,12 @@ query{
     }
   }
 `
+export const findDoneProjects = (id) => `
+query{
+	transaction(where:{path:{_regex:"/gritlab/school-curriculum"},type:{_eq:"xp"},object:{type:{_eq:"project"}}}){
+   object{
+    name
+  	} 
+  }
+}
+`
