@@ -3,7 +3,7 @@ export function skillChart(dataArray){
     const polarChart = document.createElement("div")
     polarChart.id = "skill_chart"
     polarChart.className = "skill_chart"
-    main.appendChild(polarChart)
+    document.getElementById("chart_container").appendChild(polarChart)
     // <canvas id="myChart"></canvas>
     const polarC = document.createElement("canvas")
     polarC.id = "polarC"

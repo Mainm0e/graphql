@@ -17,6 +17,7 @@ export async function getData(payload,token) {
         // Now that you have the JWT, you can use it in subsequent GraphQL requests
         // You can include the JWT in the Authorization header with Bearer authentication
     }catch (error) {
+        localStorage.removeItem("jwt")
         console.error('Error:', error.response.data.message);
         // Display appropriate error message if credentials are invalid
         // You can handle the error here and display it on your login page

@@ -9,25 +9,6 @@
     justify-content: center;
 
 }
-.logout_btn{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: #00a0e9;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 40px;
-}
-.logout_btn:hover{
-    background-color: #008ec7;
-}
 .login_page{
    display: flex;
    flex-direction: column;
@@ -37,8 +18,16 @@
     text-align: center;
     font-size: 30px;
     margin-bottom: 20px;
-}
-
+}#user_info {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+  
 .form_input{
     width: 100%;
     height: 40px;
@@ -76,12 +65,116 @@
 .form_submit input:hover{
     background-color: #008ec7;
 }
-.xp_chart{
+
+#xp_chart {
     width: 500px;
     height: 250px;
-   
+    margin-bottom: 20px;
+  }
+  
+  #skill_chart {
+    width: 500px;
+    height: 500px;
+  }
+  
+  .chart-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .xp_chart,
+  .skill_chart {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .xp_chart canvas,
+  .skill_chart canvas {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+
+  .user_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .user_info_img img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+  }
+  
+  .user_info_text {
+    margin-bottom: 10px;
+  }
+  .user_info_text .user_info_text_name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .user_info_text .user_info_text_audit {
+    color: #00a0e9;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .logout_btn {
+    margin-top: 10px;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout_btn:hover {
+    background-color: #ccc;
+  }#summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
 }
-.skill_chart{
-    width: 250px;
-    height: 250px;
+
+.summary_text {
+    margin-bottom: 10px;
 }
+
+.summary_title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.summary_text_title {
+    font-size: 16px;
+    margin: 0;
+}
+
+.skill_lists {
+    margin-top: 10px;
+}
+
+.skill_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill_list li {
+    margin-bottom: 5px;
+}
+

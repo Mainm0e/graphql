@@ -40,6 +40,30 @@ export function convertDataToSkillData(transactionData) {
 return mapArray
 }
 
+export function findInfo(data){
+  const obj = []
+  data["user"].forEach(element => {
+    const date = new Date(element["attrs"]["dateOfBirth"]);
+    const options = {
+      year: "numeric",
+      month: "short",
+      day: "2-digit"
+    };
+
+const formattedDate = date.toLocaleDateString("en-US", options)
+  let payload = {
+    "email":element["attrs"]["email"],
+    "img":element["attrs"]["image"],
+    "firstname":element["attrs"]["firstName"],
+    "surname":element["attrs"]["lastName"],
+    "dateOfBirth":formattedDate,
+    "auditRatio":element["auditRatio"].toFixed(1),
+  }
+  obj.push(payload)
+})
+  return obj
+}
+
 // Function to generate a random RGB color
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256); // Random red component (0-255)

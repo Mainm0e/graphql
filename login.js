@@ -57,6 +57,7 @@ export default class Login  {
             location.reload()
            
         } catch (error) {
+            alert("Wrong username or password")
             console.error('Error:', error.response.data.message);
             // Display appropriate error message if credentials are invalid
             // You can handle the error here and display it on your login page

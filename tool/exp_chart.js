@@ -5,7 +5,7 @@ export function expChart(ndata,dayAmount){
     const chart = document.createElement("div")
    chart.id = "xp_chart"
     chart.className = "xp_chart"
-    main.appendChild(chart)
+    document.getElementById("chart_container").appendChild(chart)
     // <canvas id="myChart"></canvas>
     const cChart = document.createElement("canvas")
     cChart.id = "myChart"
@@ -38,8 +38,6 @@ export function expChart(ndata,dayAmount){
       }
     }
     
-    
-    console.log("index",index)
     const data = [];
     for (let j = 0; j < dayAmount; j++) {
       ndata["data"].forEach((Data) => {
@@ -50,6 +48,7 @@ export function expChart(ndata,dayAmount){
       })
       data.push(index)
     }
+    console.log(index)
     
 const pointRadius1 = data.map((value, index, array) => {
 if (index === 0 || value !== array[index - 1]) {
