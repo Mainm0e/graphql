@@ -34,7 +34,7 @@ Beside those sections it will have a mandatory section for the generation of sta
 
 ## Usage
 Use live-server from index.html or 
-[Link to page](mainm0e.github.io/graphql/)
+[Link to page](https://mainm0e.github.io/graphql/)
 
 you can only Login with your Grit:lab account
 ![Alt Text](readmeimg/login.png)
