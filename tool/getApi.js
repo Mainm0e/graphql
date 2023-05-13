@@ -13,9 +13,9 @@ export async function getData(payload,token) {
             }
         );
         const responseData = await graphqlResponse.data.data
-        return responseData
         // Now that you have the JWT, you can use it in subsequent GraphQL requests
         // You can include the JWT in the Authorization header with Bearer authentication
+        return responseData
     }catch (error) {
         localStorage.removeItem("jwt")
         console.error('Error:', error.response.data.message);

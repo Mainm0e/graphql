@@ -55,6 +55,7 @@ query{
     }
   }
 `
+//get api for student personal info
 export const userInfoData = (id) => `
 query{
 	user(where:{id:{_eq:${id}}}){

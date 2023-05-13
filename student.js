@@ -49,6 +49,11 @@ export default class Student {
 
     async fetchData(){
         const student = await getData(studentInfoData, this.token)
+        if (student==undefined) {
+            alert("You are not a student")
+            localStorage.removeItem("jwt")
+            window.location.href = "/"
+        }
         this.id = student["user"][0]["id"]
         this.name = student["user"][0]["login"]
         let data = await getData(studentXpChart(this.id),this.token)
