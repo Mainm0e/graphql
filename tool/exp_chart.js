@@ -48,7 +48,6 @@ export function expChart(ndata,dayAmount){
       })
       data.push(index)
     }
-    console.log(index)
     
 const pointRadius1 = data.map((value, index, array) => {
 if (index === 0 || value !== array[index - 1]) {

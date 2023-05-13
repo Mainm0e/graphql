@@ -85,5 +85,8 @@ function findSummary(data,basicskill){
     const values = skills[1]
     const ndata = names.map((name, index) => ({ name, value: values[index] }));
     obj["skill"] = ndata
+    obj["skill"].sort(function(a, b) {
+        return b.value - a.value;
+        });
     return obj
 }

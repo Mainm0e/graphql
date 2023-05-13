@@ -1,5 +1,4 @@
 export function Summary(data) {
-    console.log("data", data);
     const summary = document.createElement("div");
     summary.id = "summary";
     summary.className = "summary";
