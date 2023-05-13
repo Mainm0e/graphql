@@ -20,6 +20,17 @@ Your profile must display three pieces of information which you may choose. For 
 
 Beside those sections it will have a mandatory section for the generation of statistic graphs.
 
+## This project will help you learn about:
+
+- GraphQL
+- GraphiQL
+- Hosting
+- JWT
+- Authentication
+- Authorization
+- Basics of human-computer interface
+- UI/UX
+
 
 ## Usage
 Use live-server from index.html or 
@@ -27,3 +38,7 @@ Use live-server from index.html or
 
 you can only Login with your Grit:lab account
 ![Alt Text](readmeimg/login.png)
+
+## In page
+With my account
+![Alt Text](/readmeimg/page.png)
