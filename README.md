@@ -20,7 +20,7 @@ Your profile must display three pieces of information which you may choose. For 
 
 Beside those sections it will have a mandatory section for the generation of statistic graphs.
 
-## This project will help you learn about:
+## This project will help me learn about:
 
 - GraphQL
 - GraphiQL
