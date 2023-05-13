@@ -37,8 +37,8 @@ Use live-server from index.html or
 [Link to page](https://mainm0e.github.io/graphql/)
 
 you can only Login with your Grit:lab account
-![Alt Text](readmeimg/login.png)
+![Alt Text](readmeImg/login.png)
 
 ## In page
 With my account
-![Alt Text](/readmeimg/page.png)
+![Alt Text](/readmeImg/page.png)
